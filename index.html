@@ -1,0 +1,267 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>张锁林先生七十寿辰快乐</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Microsoft YaHei", "SimSun", serif;
+    color: #ffe6a3;
+    background:
+        radial-gradient(ellipse at center, #a52b20 0%, #67150f 65%, #350b09 100%);
+    overflow-x: hidden;
+}
+
+.page {
+    max-width: 850px;
+    margin: auto;
+    padding: 35px 20px 60px;
+    text-align: center;
+}
+
+.top {
+    font-size: 17px;
+    letter-spacing: 8px;
+    color: #f5d58b;
+    margin-top: 15px;
+}
+
+h1 {
+    font-size: clamp(32px, 7vw, 58px);
+    color: #ffdf91;
+    text-shadow: 0 4px 15px #350000;
+    margin: 28px 0 10px;
+    letter-spacing: 5px;
+}
+
+.subtitle {
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: #fff0c4;
+}
+
+.age {
+    margin: 25px auto;
+    width: 180px;
+    height: 180px;
+    border: 4px double #f6d47e;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(75, 8, 4, .45);
+    box-shadow: 0 0 35px rgba(255, 205, 90, .2);
+}
+
+.age strong {
+    font-size: 76px;
+    line-height: 1;
+    color: #ffe09a;
+}
+
+.age span {
+    font-size: 18px;
+    letter-spacing: 5px;
+    margin-top: 8px;
+}
+
+.mahjong {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 30px auto;
+}
+
+.tile {
+    width: 57px;
+    height: 76px;
+    border-radius: 8px;
+    background: #fff4d9;
+    color: #b42118;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 39px;
+    font-weight: bold;
+    box-shadow: 0 5px 0 #c5a66e, 0 8px 12px #390c08;
+    transform: rotate(var(--r));
+    animation: float 3s ease-in-out infinite alternate;
+}
+
+.tile:nth-child(2) { animation-delay: .3s; }
+.tile:nth-child(3) { animation-delay: .6s; }
+.tile:nth-child(4) { animation-delay: .9s; }
+.tile:nth-child(5) { animation-delay: 1.2s; }
+
+@keyframes float {
+    from { transform: translateY(0) rotate(var(--r)); }
+    to { transform: translateY(-7px) rotate(var(--r)); }
+}
+
+.photo-box {
+    margin: 35px auto;
+    max-width: 340px;
+    padding: 12px;
+    border: 3px double #eac66e;
+    background: rgba(255, 226, 161, .1);
+    border-radius: 12px;
+}
+
+.photo-box img {
+    display: none;
+    width: 100%;
+    max-height: 390px;
+    object-fit: contain;
+    border-radius: 6px;
+}
+
+.photo-placeholder {
+    padding: 45px 15px;
+    color: #f6dca5;
+    font-size: 18px;
+}
+
+.upload {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #f5d58b;
+    color: #72160f;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 12px;
+}
+
+.upload:hover {
+    background: #fff0bd;
+}
+
+#photoInput {
+    display: none;
+}
+
+.message {
+    max-width: 600px;
+    margin: 35px auto;
+    padding: 25px;
+    border-top: 1px solid #e5c477;
+    border-bottom: 1px solid #e5c477;
+    font-size: 19px;
+    line-height: 2.2;
+    color: #ffedc5;
+    letter-spacing: 2px;
+}
+
+.footer {
+    margin-top: 40px;
+    font-size: 15px;
+    color: #dcbf83;
+    letter-spacing: 4px;
+}
+
+.decoration {
+    font-size: 30px;
+    margin: 20px;
+}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+    <div class="top">福寿安康 · 喜乐长宁</div>
+
+    <div class="decoration">✦ ❖ ✦</div>
+
+    <h1>张锁林先生</h1>
+    <div class="subtitle">七十寿辰 · 福寿双全</div>
+
+    <div class="age">
+        <strong>70</strong>
+        <span>岁 寿 辰</span>
+    </div>
+
+    <div class="mahjong">
+        <div class="tile" style="--r:-8deg">🀄</div>
+        <div class="tile" style="--r:5deg">發</div>
+        <div class="tile" style="--r:-4deg">中</div>
+        <div class="tile" style="--r:7deg">🀄</div>
+        <div class="tile" style="--r:-5deg">發</div>
+    </div>
+
+    <div class="photo-box">
+        <div class="photo-placeholder" id="placeholder">
+            <div style="font-size:45px">📷</div>
+            在这里放上寿星的照片
+        </div>
+        <img id="preview" alt="张锁林先生的照片">
+    </div>
+
+    <label class="upload" for="photoInput">
+        ✦ 上传寿星照片 ✦
+    </label>
+    <input type="file" id="photoInput" accept="image/*">
+
+    <div class="message">
+        七十春秋，岁月鎏金。<br>
+        愿您身体健康，笑口常开。<br>
+        生活有滋有味，日子红红火火。<br>
+        牌桌常有好牌，人生常有好运！<br>
+        福如东海，寿比南山！
+    </div>
+
+    <div class="mahjong">
+        <div class="tile" style="--r:-5deg">一</div>
+        <div class="tile" style="--r:4deg">筒</div>
+        <div class="tile" style="--r:-3deg">九</div>
+    </div>
+
+    <div class="decoration">🎂 ✦ 🎉</div>
+
+    <div class="footer">
+        恭祝张锁林先生七十寿辰快乐
+    </div>
+
+</div>
+
+<script>
+const input = document.getElementById("photoInput");
+const preview = document.getElementById("preview");
+const placeholder = document.getElementById("placeholder");
+
+input.addEventListener("change", function() {
+    const file = this.files[0];
+
+    if (!file) return;
+
+    if (!file.type.startsWith("image/")) {
+        alert("请选择图片文件！");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        preview.src = e.target.result;
+        preview.style.display = "block";
+        placeholder.style.display = "none";
+    };
+
+    reader.readAsDataURL(file);
+});
+</script>
+
+</body>
+</html>
